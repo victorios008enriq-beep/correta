@@ -64,11 +64,17 @@ function Index() {
 
   return (
     <div className="min-h-screen">
-      <main className="mx-auto flex max-w-xl flex-col">
+      <main
+        className="mx-auto flex max-w-xl flex-col"
+        style={{
+          paddingLeft: "env(safe-area-inset-left)",
+          paddingRight: "env(safe-area-inset-right)",
+        }}
+      >
         {/* HERO — compact */}
         <header
-          className="flex flex-col justify-between px-5 pt-5 pb-3"
-          style={{ minHeight: 190 }}
+          className="flex flex-col justify-between px-5 pb-3"
+          style={{ minHeight: 190, paddingTop: "calc(env(safe-area-inset-top) + 1.25rem)" }}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
@@ -126,9 +132,9 @@ function Index() {
                     type="button"
                     onClick={() => setFilter(f.id)}
                     className={
-                      "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[0.82rem] font-medium transition-all " +
+                      "btn-press inline-flex h-10 min-h-[40px] shrink-0 items-center gap-1.5 rounded-full border px-4 text-[0.82rem] font-medium " +
                       (active
-                        ? "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
+                        ? "border-primary bg-primary text-primary-foreground shadow-[0_6px_16px_-8px_oklch(0.45_0.09_155/0.55)]"
                         : "glass text-foreground/75 hover:text-foreground")
                     }
                   >
@@ -143,19 +149,26 @@ function Index() {
 
         {/* CONSULTANTS */}
         <section className="flex flex-col gap-4 px-5 py-6">
-          {list.length === 0 ? (
-            <div className="glass rounded-3xl p-8 text-center">
+          {showSkeleton ? (
+            Array.from({ length: 4 }).map((_, i) => <ConsultantCardSkeleton key={`sk-${i}`} />)
+          ) : list.length === 0 ? (
+            <div className="glass rise-in rounded-3xl p-8 text-center">
               <p className="text-sm text-muted-foreground">
                 Nenhum consultor encontrado para esta busca.
               </p>
             </div>
           ) : (
-            list.map((c, i) => <ConsultantCard key={c.id} c={c} index={i} />)
+            list.map((c, i) => (
+              <ConsultantCard key={`${filter}-${c.id}`} c={c} index={i} />
+            ))
           )}
         </section>
 
         {/* FOOTER — minimal */}
-        <footer className="mt-auto flex items-center justify-center gap-2 border-t border-border/60 px-5 py-5 text-[0.72rem] text-muted-foreground">
+        <footer
+          className="mt-auto flex items-center justify-center gap-2 border-t border-border/60 px-5 pt-5 text-[0.72rem] text-muted-foreground"
+          style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)" }}
+        >
           <span
             className="grid h-5 w-5 place-items-center rounded-md bg-primary text-[0.6rem] font-bold text-primary-foreground"
             aria-hidden
