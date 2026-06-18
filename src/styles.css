@@ -10,7 +10,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 16px);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -31,67 +31,90 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
 
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
-  --color-gmail: var(--gmail);
-  --color-gmail-foreground: var(--gmail-foreground);
-
-  --color-cat-fazendas: var(--cat-fazendas);
-  --color-cat-gado: var(--cat-gado);
-  --color-cat-genetica: var(--cat-genetica);
-  --color-cat-ddgs: var(--cat-ddgs);
 
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 1.25rem;
 
-  /* Premium agro palette: cream paper, deep forest, subtle gold */
-  --background: oklch(0.985 0.006 95);
-  --foreground: oklch(0.22 0.02 145);
+  /* Soft sage/mint background — corporate, low-saturation */
+  --background: oklch(0.965 0.018 150);
+  --foreground: oklch(0.22 0.03 155);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 145);
+  --card-foreground: oklch(0.22 0.03 155);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 145);
+  --popover-foreground: oklch(0.22 0.03 155);
 
-  --primary: oklch(0.34 0.05 150);          /* deep forest */
-  --primary-foreground: oklch(0.985 0.006 95);
+  --primary: oklch(0.45 0.09 155);            /* refined forest green */
+  --primary-foreground: oklch(0.99 0.005 150);
 
-  --secondary: oklch(0.96 0.012 95);
-  --secondary-foreground: oklch(0.28 0.03 150);
+  --secondary: oklch(0.94 0.02 150);
+  --secondary-foreground: oklch(0.3 0.04 155);
 
-  --muted: oklch(0.95 0.012 95);
-  --muted-foreground: oklch(0.5 0.02 140);
+  --muted: oklch(0.93 0.018 150);
+  --muted-foreground: oklch(0.5 0.025 155);
 
-  --accent: oklch(0.78 0.13 85);            /* warm gold */
-  --accent-foreground: oklch(0.22 0.02 145);
+  --accent: oklch(0.92 0.04 155);
+  --accent-foreground: oklch(0.3 0.05 155);
 
   --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.985 0.006 95);
+  --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.9 0.012 95);
-  --input: oklch(0.92 0.012 95);
-  --ring: oklch(0.34 0.05 150);
+  --border: oklch(0.88 0.018 150);
+  --input: oklch(0.92 0.018 150);
+  --ring: oklch(0.55 0.09 155);
 
   --whatsapp: oklch(0.66 0.16 150);
   --whatsapp-foreground: oklch(1 0 0);
-  --gmail: oklch(0.62 0.22 27);
-  --gmail-foreground: oklch(1 0 0);
 
-  --cat-fazendas: oklch(0.55 0.12 70);      /* terracotta */
-  --cat-gado: oklch(0.42 0.06 50);          /* deep brown */
-  --cat-genetica: oklch(0.5 0.12 200);      /* steel blue */
-  --cat-ddgs: oklch(0.7 0.15 90);           /* golden corn */
+  /* Avatar gradient stops — premium corporate */
+  --av-1-from: oklch(0.55 0.1 155);
+  --av-1-to:   oklch(0.38 0.07 160);
+  --av-2-from: oklch(0.58 0.08 200);
+  --av-2-to:   oklch(0.4 0.06 220);
+  --av-3-from: oklch(0.6 0.09 75);
+  --av-3-to:   oklch(0.42 0.07 60);
+  --av-4-from: oklch(0.56 0.1 295);
+  --av-4-to:   oklch(0.38 0.07 290);
 
-  --shadow-card: 0 1px 2px oklch(0.22 0.02 145 / 0.04),
-                 0 8px 24px -12px oklch(0.22 0.02 145 / 0.12);
-  --shadow-soft: 0 1px 2px oklch(0.22 0.02 145 / 0.04),
-                 0 2px 8px -4px oklch(0.22 0.02 145 / 0.08);
+  /* Layered premium background */
+  --bg-gradient:
+    radial-gradient(1100px 600px at 12% -10%, oklch(0.97 0.04 155 / 0.9), transparent 60%),
+    radial-gradient(900px 500px at 100% 8%, oklch(0.93 0.05 175 / 0.55), transparent 65%),
+    radial-gradient(700px 500px at 50% 110%, oklch(0.95 0.05 145 / 0.7), transparent 65%),
+    linear-gradient(180deg, oklch(0.97 0.02 150) 0%, oklch(0.955 0.022 150) 100%);
+
+  /* Subtle white grid pattern (very low opacity) */
+  --bg-grid:
+    linear-gradient(to right, oklch(1 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.05) 1px, transparent 1px);
+  --bg-grid-size: 56px 56px;
+
+  /* Hairline diagonal lines for depth */
+  --bg-lines:
+    repeating-linear-gradient(
+      135deg,
+      oklch(1 0 0 / 0.03) 0 1px,
+      transparent 1px 14px
+    );
+
+  /* Card surfaces (glass) */
+  --glass-bg: oklch(1 0 0 / 0.7);
+  --glass-border: oklch(1 0 0 / 0.65);
+  --shadow-card:
+    0 1px 0 oklch(1 0 0 / 0.6) inset,
+    0 1px 2px oklch(0.22 0.03 155 / 0.04),
+    0 12px 32px -16px oklch(0.22 0.03 155 / 0.18);
+  --shadow-soft:
+    0 1px 0 oklch(1 0 0 / 0.6) inset,
+    0 1px 2px oklch(0.22 0.03 155 / 0.04),
+    0 6px 18px -10px oklch(0.22 0.03 155 / 0.12);
 }
 
 @layer base {
@@ -103,7 +126,39 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+  body {
+    background-image: var(--bg-grid), var(--bg-lines), var(--bg-gradient);
+    background-size: var(--bg-grid-size), auto, auto;
+    background-attachment: fixed;
+    background-repeat: repeat, repeat, no-repeat;
+  }
+}
+
+/* Glass surface utility */
+@utility glass {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--glass-border);
+}
+
+/* Premium avatar gradients */
+@utility avatar-grad-1 {
+  background-image: linear-gradient(140deg, var(--av-1-from), var(--av-1-to));
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 6px 14px -8px var(--av-1-to);
+}
+@utility avatar-grad-2 {
+  background-image: linear-gradient(140deg, var(--av-2-from), var(--av-2-to));
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 6px 14px -8px var(--av-2-to);
+}
+@utility avatar-grad-3 {
+  background-image: linear-gradient(140deg, var(--av-3-from), var(--av-3-to));
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 6px 14px -8px var(--av-3-to);
+}
+@utility avatar-grad-4 {
+  background-image: linear-gradient(140deg, var(--av-4-from), var(--av-4-to));
+  box-shadow: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 6px 14px -8px var(--av-4-to);
 }
 
 /* Infinite marquee */
@@ -124,7 +179,6 @@
   100% { opacity: 0; transform: translateY(-4px); }
 }
 
-/* Subtle edge fade for marquee */
 .marquee-mask {
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
