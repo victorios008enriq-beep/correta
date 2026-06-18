@@ -45,7 +45,7 @@ function Index() {
   }, [query, filter]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <main className="mx-auto flex max-w-xl flex-col">
         {/* HERO — compact */}
         <header
@@ -85,7 +85,7 @@ function Index() {
         </header>
 
         {/* STICKY SEARCH + FILTERS */}
-        <div className="sticky top-0 z-30 border-b border-border/70 bg-background/85 px-5 pt-3 pb-3 backdrop-blur-md">
+        <div className="sticky top-0 z-30 border-b border-white/40 bg-[oklch(0.97_0.018_150/0.7)] px-5 pt-3 pb-3 backdrop-blur-xl">
           <label className="relative block">
             <span className="sr-only">Pesquisar consultor</span>
             <SearchIcon className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
@@ -94,7 +94,7 @@ function Index() {
               onChange={(e) => setQuery(e.target.value)}
               type="search"
               placeholder="Pesquisar consultor..."
-              className="h-12 w-full rounded-2xl border border-border bg-card pl-11 pr-4 text-[0.95rem] text-foreground placeholder:text-muted-foreground/80 shadow-[var(--shadow-soft)] outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
+              className="glass h-12 w-full rounded-2xl pl-11 pr-4 text-[0.95rem] text-foreground placeholder:text-muted-foreground/80 shadow-[var(--shadow-soft)] outline-none transition focus:border-primary/40 focus:ring-2 focus:ring-primary/15"
             />
           </label>
 
@@ -111,7 +111,7 @@ function Index() {
                       "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[0.82rem] font-medium transition-all " +
                       (active
                         ? "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
-                        : "border-border bg-card text-foreground/70 hover:border-primary/30 hover:text-foreground")
+                        : "glass text-foreground/75 hover:text-foreground")
                     }
                   >
                     {f.emoji && <span aria-hidden>{f.emoji}</span>}
@@ -124,15 +124,15 @@ function Index() {
         </div>
 
         {/* CONSULTANTS */}
-        <section className="flex flex-col gap-3 px-5 py-5">
+        <section className="flex flex-col gap-4 px-5 py-6">
           {list.length === 0 ? (
-            <div className="rounded-3xl border border-dashed border-border bg-card/60 p-8 text-center">
+            <div className="glass rounded-3xl p-8 text-center">
               <p className="text-sm text-muted-foreground">
                 Nenhum consultor encontrado para esta busca.
               </p>
             </div>
           ) : (
-            list.map((c) => <ConsultantCard key={c.id} c={c} />)
+            list.map((c, i) => <ConsultantCard key={c.id} c={c} index={i} />)
           )}
         </section>
 
