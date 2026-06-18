@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { RotatingPhrase } from "@/components/RotatingPhrase";
 import { ConsultantCard } from "@/components/ConsultantCard";
+import { ConsultantCardSkeleton } from "@/components/ConsultantCardSkeleton";
 import { CATEGORY_META, CONSULTANTS, type Category } from "@/data/consultants";
 
 export const Route = createFileRoute("/")({
@@ -30,6 +31,20 @@ const FILTERS: { id: Filter; label: string; emoji?: string }[] = [
 function Index() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
+  const [booting, setBooting] = useState(true);
+  const [reloading, setReloading] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setBooting(false), 650);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (booting) return;
+    setReloading(true);
+    const t = setTimeout(() => setReloading(false), 260);
+    return () => clearTimeout(t);
+  }, [filter]);
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -43,6 +58,9 @@ function Index() {
       );
     });
   }, [query, filter]);
+
+  const showSkeleton = booting || reloading;
+
 
   return (
     <div className="min-h-screen">
