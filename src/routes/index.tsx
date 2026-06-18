@@ -132,7 +132,7 @@ function Index() {
               </p>
             </div>
           ) : (
-            list.map((c) => <ConsultantCard key={c.id} c={c} />)
+            list.map((c, i) => <ConsultantCard key={c.id} c={c} index={i} />)
           )}
         </section>
 
