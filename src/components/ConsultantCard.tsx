@@ -16,7 +16,10 @@ export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
   const mailHref = `mailto:${c.email}?subject=${encodeURIComponent("Contato via Hub Correta")}`;
 
   return (
-    <article className="glass group rounded-3xl p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5">
+    <article
+      className="glass group rise-in rounded-3xl p-6 shadow-[var(--shadow-card)] transition-shadow duration-300 hover:shadow-[0_18px_44px_-22px_oklch(0.22_0.03_155/0.28)]"
+      style={{ animationDelay: `${index * 70}ms` }}
+    >
       <header className="flex items-center gap-4">
         <div
           className={`grid h-14 w-14 shrink-0 place-items-center rounded-full text-[1.05rem] font-semibold text-white ${grad}`}
@@ -44,13 +47,13 @@ export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
           href={waHref}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-whatsapp text-[0.92rem] font-semibold text-whatsapp-foreground shadow-[var(--shadow-soft)] transition-all active:scale-[0.98]"
+          className="btn-press inline-flex h-12 min-h-[44px] items-center justify-center gap-2 rounded-2xl bg-whatsapp text-[0.92rem] font-semibold text-whatsapp-foreground shadow-[0_6px_18px_-10px_oklch(0.66_0.16_150/0.6)] hover:shadow-[0_10px_24px_-10px_oklch(0.66_0.16_150/0.75)]"
         >
           <WhatsAppIcon /> WhatsApp
         </a>
         <a
           href={mailHref}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-border bg-white text-[0.92rem] font-semibold text-foreground shadow-[var(--shadow-soft)] transition-all active:scale-[0.98]"
+          className="btn-press inline-flex h-12 min-h-[44px] items-center justify-center gap-2 rounded-2xl border border-border bg-white text-[0.92rem] font-semibold text-foreground shadow-[var(--shadow-soft)] hover:shadow-[0_10px_24px_-12px_oklch(0.22_0.03_155/0.22)]"
         >
           <GmailIcon /> Gmail
         </a>

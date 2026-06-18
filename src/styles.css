@@ -161,6 +161,43 @@
   box-shadow: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 6px 14px -8px var(--av-4-to);
 }
 
+/* Card entrance: fade + lift, with stagger via inline delay */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise-in {
+  opacity: 0;
+  animation: rise-in 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    oklch(0.94 0.015 150 / 0.6) 0%,
+    oklch(0.98 0.012 150 / 0.9) 50%,
+    oklch(0.94 0.015 150 / 0.6) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 0.75rem;
+}
+
+/* Press / hover button micro-interaction */
+@utility btn-press {
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 220ms ease,
+              filter 220ms ease;
+  &:hover { transform: translateY(-1px) scale(1.015); filter: brightness(1.03); }
+  &:active { transform: translateY(0) scale(0.985); }
+}
+
 /* Infinite marquee */
 @keyframes marquee {
   from { transform: translateX(0); }
