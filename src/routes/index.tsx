@@ -111,7 +111,7 @@ function Index() {
                       "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[0.82rem] font-medium transition-all " +
                       (active
                         ? "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
-                        : "border-border bg-card text-foreground/70 hover:border-primary/30 hover:text-foreground")
+                        : "glass text-foreground/75 hover:text-foreground")
                     }
                   >
                     {f.emoji && <span aria-hidden>{f.emoji}</span>}
@@ -124,9 +124,9 @@ function Index() {
         </div>
 
         {/* CONSULTANTS */}
-        <section className="flex flex-col gap-3 px-5 py-5">
+        <section className="flex flex-col gap-4 px-5 py-6">
           {list.length === 0 ? (
-            <div className="rounded-3xl border border-dashed border-border bg-card/60 p-8 text-center">
+            <div className="glass rounded-3xl p-8 text-center">
               <p className="text-sm text-muted-foreground">
                 Nenhum consultor encontrado para esta busca.
               </p>
