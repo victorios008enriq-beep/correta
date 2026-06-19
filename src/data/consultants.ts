@@ -21,7 +21,7 @@ export const CONSULTANTS: Consultant[] = [
     id: "1",
     name: "Rafael Andrade",
     category: "fazendas",
-    specialty: "Compra e venda de fazendas no Centro-Oeste",
+    specialty: "Compra e venda de fazendas",
     whatsapp: "+5566999990001",
     email: "rafael@corretaconsultoria.com.br",
   },
