@@ -9,6 +9,7 @@ export type Consultant = {
   email: string;
   image?: string;
   waMessage?: string;
+  waHref?: string;
 };
 
 export const CATEGORY_META: Record<Category, { label: string; short: string; emoji: string }> = {
