@@ -10,9 +10,8 @@ function initial(name: string) {
 export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
   const meta = CATEGORY_META[c.category];
   const grad = AVATAR_GRADS[index % AVATAR_GRADS.length];
-  const waHref = `https://wa.me/${c.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(
-    `Olá ${c.name.split(" ")[0]}, vim pelo hub da Correta Consultoria.`,
-  )}`;
+  const waText = c.waMessage ?? `Olá ${c.name.split(" ")[0]}, vim pelo hub da Correta Consultoria.`;
+  const waHref = `https://wa.me/${c.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(waText)}`;
   const mailHref = `mailto:${c.email}?subject=${encodeURIComponent("Contato via Hub Correta")}`;
 
   return (
