@@ -20,12 +20,23 @@ export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
       style={{ animationDelay: `${index * 70}ms` }}
     >
       <header className="flex items-center gap-4">
-        <div
-          className={`grid h-14 w-14 shrink-0 place-items-center rounded-full text-[1.05rem] font-semibold text-white ${grad}`}
-          aria-hidden
-        >
-          {initial(c.name)}
-        </div>
+        {c.image ? (
+          <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full shadow-[0_2px_8px_-2px_oklch(0.22_0.03_155/0.18)]">
+            <img
+              src={c.image}
+              alt={c.name}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <div
+            className={`grid h-14 w-14 shrink-0 place-items-center rounded-full text-[1.05rem] font-semibold text-white ${grad}`}
+            aria-hidden
+          >
+            {initial(c.name)}
+          </div>
+        )}
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <h3 className="truncate text-[1.05rem] font-semibold leading-tight text-foreground">
