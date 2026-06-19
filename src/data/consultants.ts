@@ -31,11 +31,12 @@ export const CONSULTANTS: Consultant[] = [
   },
   {
     id: "2",
-    name: "Mariana Lopes",
+    name: "Pedro Salermo",
     category: "gado",
-    specialty: "Negociação de gado de corte e cria",
-    whatsapp: "+5566999990002",
-    email: "mariana@corretaconsultoria.com.br",
+    specialty: "Compra e venda de gado",
+    whatsapp: "+55 66 98411-6934",
+    email: "pedro@corretaagronegocios.com.br",
+    waMessage: "Olá Pedro quero comprar uma gado.",
   },
   {
     id: "3",
