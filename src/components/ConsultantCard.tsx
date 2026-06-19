@@ -33,7 +33,7 @@ export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
               {c.name}
             </h3>
           </div>
-          <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-wider text-primary-foreground">
+          <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-0.5 text-[0.68rem] font-semibold tracking-wider text-primary-foreground">
             <span aria-hidden>{meta.emoji}</span>
             {meta.short}
           </div>
