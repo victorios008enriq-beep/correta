@@ -49,10 +49,12 @@ export const CONSULTANTS: Consultant[] = [
   },
   {
     id: "4",
-    name: "Camila Ribeiro",
+    name: "Robson Proença",
     category: "ddgs",
-    specialty: "Comercialização de DDGs e nutrição animal",
-    whatsapp: "+5566999990004",
-    email: "camila@corretaconsultoria.com.br",
+    specialty: "Venda de DDGs",
+    whatsapp: "+55 66 99665-5828",
+    email: "robson@corretaagronegociis.com.br",
+    image: "/__l5e/assets-v1/3836b80b-e98b-4f51-80f8-5bf7239600e4/robson.png",
+    waMessage: "Olá Robson quero comprar DDGs .",
   },
 ];
