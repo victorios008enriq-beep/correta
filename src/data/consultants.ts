@@ -44,10 +44,11 @@ export const CONSULTANTS: Consultant[] = [
     name: "Vanessa Trajano",
     category: "genetica",
     specialty: "Venda de Sêmen Bovino",
-    whatsapp: "+55 66 98411-6934",
+    whatsapp: "+55 66 8458-2247",
     email: "vanessa@corretaagronegocios.com.br",
     image: "/__l5e/assets-v1/9b70aae7-a5c3-49ff-84a1-4cc680c1e04b/vanessa.png",
     waMessage: "Olá Vanesa quero comprar Sêmen Bovino .",
+    waHref: "https://api.whatsapp.com/send/?phone=5566984582247&text=Ol%C3%A1+Vanesa+quero+comprar+S%C3%AAmen+Bovino+.&type=phone_number&app_absent=0",
   },
   {
     id: "4",
