@@ -73,35 +73,13 @@ function Index() {
       >
         {/* HERO — compact */}
         <header
-          className="flex flex-col justify-between px-5 pb-3"
-          style={{ minHeight: 190, paddingTop: "calc(env(safe-area-inset-top) + 1.25rem)" }}
+          className="flex flex-col gap-4 px-5 pb-3"
+          style={{ paddingTop: "calc(env(safe-area-inset-top) + 1.25rem)" }}
         >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div
-                className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground"
-                aria-hidden
-              >
-                <span className="text-[0.95rem] font-bold">C</span>
-              </div>
-              <div className="leading-tight">
-                <p className="text-[0.78rem] font-semibold tracking-[0.18em] text-primary">
-                  CORRETA
-                </p>
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-muted-foreground">
-                  Consultoria · Agronegócios
-                </p>
-              </div>
-            </div>
-            <span className="rounded-full border border-border bg-card/60 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-wider text-muted-foreground">
-              Hub · 2026
-            </span>
-          </div>
-
           <LogoMarquee />
 
           <div className="space-y-1.5 text-center">
-            <h1 className="truncate text-[1.05rem] font-semibold tracking-tight text-foreground">
+            <h1 className="text-balance text-[1.05rem] font-semibold leading-snug tracking-tight text-foreground">
               Encontre o especialista ideal para o seu negócio.
             </h1>
             <RotatingPhrase />
@@ -109,7 +87,7 @@ function Index() {
         </header>
 
         {/* STICKY SEARCH + FILTERS */}
-        <div className="sticky top-0 z-30 border-b border-white/40 bg-[oklch(0.97_0.018_150/0.7)] px-5 pt-3 pb-3 backdrop-blur-xl">
+        <div className="sticky top-0 z-30 border-b border-white/40 bg-[oklch(0.955_0.028_150/0.7)] px-5 pt-3 pb-3 backdrop-blur-xl">
           <label className="relative block">
             <span className="sr-only">Pesquisar consultor</span>
             <SearchIcon className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
@@ -169,12 +147,6 @@ function Index() {
           className="mt-auto flex items-center justify-center gap-2 border-t border-border/60 px-5 pt-5 text-[0.72rem] text-muted-foreground"
           style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 1.25rem)" }}
         >
-          <span
-            className="grid h-5 w-5 place-items-center rounded-md bg-primary text-[0.6rem] font-bold text-primary-foreground"
-            aria-hidden
-          >
-            C
-          </span>
           <span className="font-medium text-foreground/80">Correta Consultoria</span>
           <span className="text-muted-foreground/60">·</span>
           <span>© {new Date().getFullYear()}</span>
