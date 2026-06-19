@@ -77,9 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Correta Consultoria · Hub de Contatos" },
+      { title: "Correta" },
       { name: "description", content: "Encontre o especialista ideal da Correta Consultoria Agronegócios e fale por WhatsApp ou e-mail com um toque." },
       { name: "theme-color", content: "#1f3a2b" },
+      { property: "og:title", content: "Correta" },
+      { name: "twitter:title", content: "Correta" },
+      { property: "og:description", content: "Encontre o especialista ideal da Correta Consultoria Agronegócios e fale por WhatsApp ou e-mail com um toque." },
+      { name: "twitter:description", content: "Encontre o especialista ideal da Correta Consultoria Agronegócios e fale por WhatsApp ou e-mail com um toque." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5864de1f-b615-4a69-a2f9-aa7952808651/id-preview-49819264--58990945-85e0-43fe-a824-5cb17f6cf779.lovable.app-1781828976612.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5864de1f-b615-4a69-a2f9-aa7952808651/id-preview-49819264--58990945-85e0-43fe-a824-5cb17f6cf779.lovable.app-1781828976612.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
