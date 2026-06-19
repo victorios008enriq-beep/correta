@@ -39,11 +39,13 @@ export const CONSULTANTS: Consultant[] = [
   },
   {
     id: "3",
-    name: "Bruno Tavares",
+    name: "Vanessa Trajano",
     category: "genetica",
-    specialty: "Genética bovina e melhoramento de rebanhos",
-    whatsapp: "+5566999990003",
-    email: "bruno@corretaconsultoria.com.br",
+    specialty: "Venda de Sêmen Bovino",
+    whatsapp: "+55 66 98411-6934",
+    email: "vanessa@corretaagronegocios.com.br",
+    image: "/__l5e/assets-v1/9b70aae7-a5c3-49ff-84a1-4cc680c1e04b/vanessa.png",
+    waMessage: "Olá Vanesa quero comprar Sêmen Bovino .",
   },
   {
     id: "4",
