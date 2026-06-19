@@ -7,6 +7,8 @@ export type Consultant = {
   specialty: string;
   whatsapp: string; // E.164 digits
   email: string;
+  image?: string;
+  waMessage?: string;
 };
 
 export const CATEGORY_META: Record<Category, { label: string; short: string; emoji: string }> = {
@@ -19,11 +21,13 @@ export const CATEGORY_META: Record<Category, { label: string; short: string; emo
 export const CONSULTANTS: Consultant[] = [
   {
     id: "1",
-    name: "Rafael Andrade",
+    name: "Gustavo Pires Ribeiro",
     category: "fazendas",
     specialty: "Compra e venda de fazendas",
-    whatsapp: "+5566999990001",
-    email: "rafael@corretaconsultoria.com.br",
+    whatsapp: "+55 66 9227-6659",
+    email: "gustavo@corretaagronegocios.com.br",
+    image: "/__l5e/assets-v1/a0bd8a13-d70e-4dfb-9b4a-2e72dee4da72/gustavo.png",
+    waMessage: "Olá Gustavo quero comprar uma fazenda.",
   },
   {
     id: "2",
