@@ -36,7 +36,7 @@ export const CONSULTANTS: Consultant[] = [
     specialty: "Compra e venda de gado",
     whatsapp: "+55 66 98411-6934",
     email: "pedro@corretaagronegocios.com.br",
-    waMessage: "Olá Pedro quero comprar uma gado.",
+    waMessage: "Olá Pedro quero comprar um gado.",
   },
   {
     id: "3",
