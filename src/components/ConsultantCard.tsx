@@ -63,10 +63,22 @@ export function ConsultantCard({ c, index }: { c: Consultant; index: number }) {
         </a>
         <a
           href={mailHref}
+          onClick={(e) => {
+            const isMobile =
+              typeof navigator !== "undefined" &&
+              (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+                (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches));
+            if (!isMobile) {
+              e.preventDefault();
+              const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(c.email)}&su=${encodeURIComponent("Contato via Hub Correta")}`;
+              window.open(gmailUrl, "_blank", "noopener,noreferrer");
+            }
+          }}
           className="btn-press inline-flex h-12 min-h-[44px] items-center justify-center gap-2 rounded-2xl border border-border bg-white text-[0.92rem] font-semibold text-foreground shadow-[var(--shadow-soft)] hover:shadow-[0_10px_24px_-12px_oklch(0.22_0.03_155/0.22)]"
         >
-          <GmailIcon /> Gmail
+          <GmailIcon /> E-mail
         </a>
+
       </div>
     </article>
   );
