@@ -1,3 +1,5 @@
+import instagramAvatar from "@/assets/instagram-correta.png.asset.json";
+
 const INSTAGRAM_URL =
   "https://www.instagram.com/corretaagronegocios?igsh=a293NjY1MjY2cngw";
 
@@ -8,16 +10,11 @@ export function InstagramCard({ index }: { index: number }) {
       style={{ animationDelay: `${index * 70}ms` }}
     >
       <header className="flex items-center gap-4">
-        <div
-          className="grid h-14 w-14 shrink-0 place-items-center rounded-full text-white shadow-[0_2px_8px_-2px_oklch(0.22_0.03_155/0.18)]"
-          style={{
-            background:
-              "linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)",
-          }}
-          aria-hidden
-        >
-          <InstagramIcon />
-        </div>
+        <img
+          src={instagramAvatar.url}
+          alt="Correta Agronegócios"
+          className="h-14 w-14 shrink-0 rounded-full object-cover shadow-[0_2px_8px_-2px_oklch(0.22_0.03_155/0.18)]"
+        />
         <div className="min-w-0 flex-1">
           <h3 className="truncate text-[1.05rem] font-semibold leading-tight text-foreground">
             Correta Agronegócios
