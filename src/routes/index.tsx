@@ -4,6 +4,7 @@ import { LogoMarquee } from "@/components/LogoMarquee";
 import { RotatingPhrase } from "@/components/RotatingPhrase";
 import { ConsultantCard } from "@/components/ConsultantCard";
 import { ConsultantCardSkeleton } from "@/components/ConsultantCardSkeleton";
+import { InstagramCard } from "@/components/InstagramCard";
 import { CATEGORY_META, CONSULTANTS, type Category } from "@/data/consultants";
 
 export const Route = createFileRoute("/")({
@@ -136,9 +137,12 @@ function Index() {
               </p>
             </div>
           ) : (
-            list.map((c, i) => (
-              <ConsultantCard key={`${filter}-${c.id}`} c={c} index={i} />
-            ))
+            <>
+              {list.map((c, i) => (
+                <ConsultantCard key={`${filter}-${c.id}`} c={c} index={i} />
+              ))}
+              <InstagramCard index={list.length} />
+            </>
           )}
         </section>
 

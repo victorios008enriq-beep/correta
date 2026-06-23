@@ -37,6 +37,7 @@ export const CONSULTANTS: Consultant[] = [
     specialty: "Compra e venda de gado",
     whatsapp: "+55 66 8458-2247",
     email: "pedro@corretaagronegocios.com.br",
+    image: "/__l5e/assets-v1/36534cbb-ef86-4ddd-949d-609706110a98/pedro.jpg",
     waMessage: "Olá Pedro quero comprar um gado.",
   },
   {
